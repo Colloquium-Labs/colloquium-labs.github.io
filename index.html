@@ -5,37 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colloquium Labs</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: lightgrey;
             font-family: Helvetica, sans-serif;
             color: black;
+            overflow-x: hidden;
+        }
+
+        .section {
+            height: 100vh;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 20px 0 0 0; /* Add top margin to drop the body down */
+            padding: 2rem;
+            position: relative;
         }
-        .content {
-            text-align: center;
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
-        footer {
-            margin-top: auto;
-            padding: 20px;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
-        a {
-            color: black;
-            text-decoration: underline;
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .back-to-top {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: black;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        #section1 {
+            background-color: #FFD84D;
+        }
+
+        #section2 {
+            background-color: #FF7F6F;
+        }
+
+        #section3 {
+            background-color: #FF69B4;
+        }
+
+        #section4 {
+            background-color: #7FFFD4;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-dot.active {
+            background-color: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Colloquium Labs</h1>
-        <p>creating conversations</p>
+    <section id="section1" class="section">
+        <div class="section-content">
+            <h1>Welcome to<br>Colloquium Labs</h1>
+        </div>
+    </section>
+
+    <section id="section2" class="section">
+        <a href="#section1" class="back-to-top">Back to top</a>
+        <div class="section-content">
+            <p>Colloquium Labs leverages generative AI to facilitate meaningful dialogues, enabling individuals to explore and better understand their needs and desires.</p>
+        </div>
+    </section>
+
+    <section id="section3" class="section">
+        <a href="#section1" class="back-to-top">Back to top</a>
+        <div class="section-content">
+            <p>Colloquium Labs is a community of agents designed to foster thoughtful conversations that help users reflect, develop their ideas, and make more conscious decisions amid the limitless possibilities society offers. By promoting deeper self-awareness through dialogue, we empower individuals to navigate their personal and collective aspirations with clarity and intention.</p>
+        </div>
+    </section>
+
+    <section id="section4" class="section">
+        <a href="#section1" class="back-to-top">Back to top</a>
+        <div class="section-content">
+            <p>We believe in calm technology. That's why we only respond when you prompt us—we'll never send you unsolicited content. You're always in control of starting the conversation.</p>
+        </div>
+    </section>
+
+    <div class="nav-dots">
+        <a href="#section1" class="nav-dot"></a>
+        <a href="#section2" class="nav-dot"></a>
+        <a href="#section3" class="nav-dot"></a>
+        <a href="#section4" class="nav-dot"></a>
     </div>
-    <footer>
-        <p>Contact us: <a href="mailto:info@colloquiumlabs.com">info@colloquiumlabs.com</a></p>
-    </footer>
+
+    <script>
+        // Update active dot based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const dots = document.querySelectorAll('.nav-dot');
+            
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top >= -window.innerHeight/2 && rect.top < window.innerHeight/2) {
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[index].classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
