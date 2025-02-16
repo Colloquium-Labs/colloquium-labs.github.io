@@ -70,6 +70,71 @@
             background-color: #7FFFD4;
         }
 
+        #section5 {
+            background-color: #4D9FFF;
+        }
+
+        #section6 {
+            background-color: #000000;
+            color: white;
+        }
+
+        .agent-list {
+            margin-top: 2rem;
+        }
+
+        .agent-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .agent-card.clickable {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .agent-card.clickable:hover {
+            opacity: 0.9;
+        }
+
+        .agent-avatar {
+            width: 60px;
+            height: 60px;
+            background: black;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .agent-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .agent-placeholder {
+            width: 60px;
+            height: 60px;
+            border: 2px dashed white;
+            border-radius: 8px;
+        }
+
+        .agent-info {
+            flex: 1;
+        }
+
+        .email-link {
+            color: white;
+            text-decoration: underline;
+        }
+
         .nav-dots {
             position: fixed;
             right: 2rem;
@@ -120,11 +185,47 @@
         </div>
     </section>
 
+    <section id="section5" class="section">
+        <a href="#section1" class="back-to-top">Back to top</a>
+        <div class="section-content">
+            <p>We don't save personal data or track your preferences. The only information we log is anonymous usability data, solely to monitor performance and improve our conversational agents. Log in is not required to engage with our agents.</p>
+        </div>
+    </section>
+
+    <section id="section6" class="section">
+        <a href="#section1" class="back-to-top">Back to top</a>
+        <div class="section-content">
+            <h2>Below the list of our agents, tap to engage in a conversation.</h2>
+            
+            <div class="agent-list">
+                <a href="https://mel-ai-book-recommender.vercel.app" style="text-decoration: none; color: inherit;">
+                    <div class="agent-card clickable">
+                        <div class="agent-avatar">
+                            <img src="mel-icon.webp" alt="Mel AI" />
+                        </div>
+                        <div class="agent-info">
+                            <p>Hi, this is Mel! I'll help explore your interests to suggest your next book.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="agent-card">
+                    <div class="agent-placeholder"></div>
+                    <div class="agent-info">
+                        <p>We are about to launch our next agent, in the meantime if you would like to discuss about it please write at <a href="mailto:community@colloquimlabs.com" class="email-link">community@colloquimlabs.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="nav-dots">
         <a href="#section1" class="nav-dot"></a>
         <a href="#section2" class="nav-dot"></a>
         <a href="#section3" class="nav-dot"></a>
         <a href="#section4" class="nav-dot"></a>
+        <a href="#section5" class="nav-dot"></a>
+        <a href="#section6" class="nav-dot"></a>
     </div>
 
     <script>
