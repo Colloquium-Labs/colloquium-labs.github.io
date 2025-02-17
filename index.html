@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colloquium Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +15,7 @@
         }
 
         body {
-            font-family: Helvetica, sans-serif;
+            font-family: 'Inter', Helvetica, sans-serif;
             color: black;
             overflow-x: hidden;
         }
@@ -25,11 +28,28 @@
             justify-content: center;
             padding: 2rem;
             position: relative;
+            text-align: left;
         }
 
         .section-content {
             max-width: 800px;
             margin: 0 auto;
+            text-align: left;
+            width: 100%;
+        }
+
+        .section-1 {
+            padding: 2rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .section-1 h1 {
+            text-align: left;
+            width: 100%;
         }
 
         h1 {
@@ -38,8 +58,9 @@
         }
 
         p {
-            font-size: 1.25rem;
-            line-height: 1.6;
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            font-weight: 525;
         }
 
         .back-to-top {
@@ -77,6 +98,12 @@
         #section6 {
             background-color: #000000;
             color: white;
+            min-height: 100vh;
+            height: auto;
+        }
+
+        #section6 p {
+            font-weight: 475;
         }
 
         .agent-list {
@@ -85,7 +112,7 @@
 
         .agent-card {
             display: flex;
-            align-items: center;
+            align-items: left;
             gap: 1rem;
             margin-bottom: 2rem;
             padding: 1rem;
@@ -107,8 +134,8 @@
             background: black;
             border-radius: 8px;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: left;
+            justify-content: left;
             font-weight: bold;
             overflow: hidden;
         }
@@ -124,6 +151,12 @@
             height: 60px;
             border: 2px dashed white;
             border-radius: 8px;
+        }
+
+        .agent-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .agent-info {
@@ -160,7 +193,7 @@
 <body>
     <section id="section1" class="section">
         <div class="section-content">
-            <h1>Welcome to<br>Colloquium Labs</h1>
+            <p>Welcome to<br>Colloquium Labs</p>
         </div>
     </section>
 
@@ -186,7 +219,7 @@
     </section>
 
     <section id="section5" class="section">
-        <a href="#section1" class="back-to-top">Back to top</a>
+        <!-- <a href="#section1" class="back-to-top">Back to top</a> -->
         <div class="section-content">
             <p>We don't save personal data or track your preferences. The only information we log is anonymous usability data, solely to monitor performance and improve our conversational agents. Log in is not required to engage with our agents.</p>
         </div>
@@ -195,26 +228,32 @@
     <section id="section6" class="section">
         <a href="#section1" class="back-to-top">Back to top</a>
         <div class="section-content">
-            <h2>Below the list of our agents, tap to engage in a conversation.</h2>
+            <p>Below the list of our agents, tap to engage in a conversation.</p>
             
             <div class="agent-list">
                 <a href="https://mel-ai-book-recommender.vercel.app" style="text-decoration: none; color: inherit;">
                     <div class="agent-card clickable">
                         <div class="agent-avatar">
-                            <img src="mel-icon.webp" alt="Mel AI" />
+                            <img src="images/mel-logo-white.png" alt="Mel AI" />
                         </div>
                         <div class="agent-info">
-                            <p>Hi, this is Mel! I'll help explore your interests to suggest your next book.</p>
+                            <p>Hi, this is <u>Mel</u>! I'll help explore your interests to suggest your next book.</p>
                         </div>
                     </div>
                 </a>
 
-                <div class="agent-card">
-                    <div class="agent-placeholder"></div>
-                    <div class="agent-info">
-                        <p>We are about to launch our next agent, in the meantime if you would like to discuss about it please write at <a href="mailto:community@colloquimlabs.com" class="email-link">community@colloquimlabs.com</a></p>
+                <a href="mailto:info@colloquimlabs.com" style="text-decoration: none; color: inherit;">
+                    <div class="agent-card clickable">
+                        <div class="agent-avatar">
+                            <img src="images/empty-logo.png" alt="Coming Soon" />
+                        </div>
+                        <div class="agent-info">
+                            <p>We are about to launch our next agent. Email us if you are interested.</p>
+                            <p><a href="mailto:info@colloquimlabs.com" class="email-link">info@colloquimlabs.com</a></p>
+                        </div>
                     </div>
-                </div>
+                </a>
+
             </div>
         </div>
     </section>
